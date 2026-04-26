@@ -1,6 +1,8 @@
 "use client";
 import AboutSection from "@/sections/LandingPage/AboutSection";
+import Contact from "@/sections/LandingPage/Contact";
 import Herosection from "@/sections/LandingPage/Herosection";
+import Projects from "@/sections/LandingPage/Projects";
 import SkillSection from "@/sections/LandingPage/SkillSection";
 import React from "react";
 
@@ -10,6 +12,8 @@ const LandingPage = () => {
       <Herosection />
       <AboutSection />
       <SkillSection />
+      <Projects />
+      <Contact />
     </div>
   );
 };
