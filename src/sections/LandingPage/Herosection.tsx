@@ -25,9 +25,13 @@ const Herosection = () => {
                 Sazzad
                 <span className="text-gray-400 ml-4">Hossen</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl  text-gray-400 max-w-2xl leading-relaxed">
-                Full Stack Developer creating exceptional digital experiences
-                with modern web technologies.
+              <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+                I build high-performance full-stack applications with a strong
+                focus on scalable architecture, clean and optimized backend
+                systems, and secure role-based access control. I ensure database
+                design stays structured and maintainable while delivering smooth
+                UX with real-time features, modern UI animations, and
+                technologies like Next.js, TypeScript, GSAP, and Framer Motion.
               </p>
             </div>
 

@@ -83,18 +83,26 @@ const AboutSection = () => {
             </div>
 
             {/* Description */}
-            <div className="space-y-4 text-gray-600">
+            <div className="space-y-5 text-gray-600">
               <p className="text-base sm:text-lg leading-relaxed">
-                I&apos;m Sazzad Hossen, a passionate Full Stack Developer with
-                over 5 years of experience in building modern web applications.
-                I specialize in creating fast, scalable, and user-friendly
-                digital solutions that solve real-world problems.
+                I&apos;m Sazzad Hossen, a Full Stack Developer focused on
+                building production-ready, scalable, and performance-optimized
+                web applications. I specialize in Next.js ecosystem, modern
+                frontend engineering, and secure backend architecture.
               </p>
+
               <p className="text-base sm:text-lg leading-relaxed">
-                My journey in web development started with a curiosity for how
-                things work online, which quickly turned into a lifelong
-                passion. I love learning new technologies and implementing them
-                to create innovative solutions.
+                My approach goes beyond just UI development—I design systems
+                with clean architecture, optimized database structure, and
+                secure role-based access control. I enjoy building real-time
+                applications, API-driven platforms, and interactive user
+                experiences.
+              </p>
+
+              <p className="text-base sm:text-lg leading-relaxed">
+                I continuously explore modern technologies like GSAP, Framer
+                Motion, Socket.IO, and advanced state management to deliver
+                smooth, scalable, and maintainable products.
               </p>
             </div>
 
