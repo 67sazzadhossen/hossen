@@ -18,8 +18,8 @@ interface Project {
   fullDescription?: string;
   image: string;
   technologies: string[];
-  githubLink: string;
-  liveLink: string;
+  githubLink: string | null;
+  liveLink: string | null;
   featured: boolean;
 }
 
@@ -67,6 +67,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
   }, [isOpen, onClose]);
 
   if (!isOpen || !project) return null;
+
+  const hasGithub = project.githubLink && project.githubLink.trim() !== "";
+  const hasLiveLink = project.liveLink && project.liveLink.trim() !== "";
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
@@ -161,27 +164,44 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
             </div>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-gray-200">
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105"
-            >
-              <FaExternalLinkAlt size={18} />
-              Live Demo
-            </a>
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300 hover:scale-105"
-            >
-              <FaGithub size={20} />
-              View Code
-            </a>
-          </div>
+          {/* Action Buttons - শুধু দেখাবে যদি লিংক থাকে */}
+          {(hasGithub || hasLiveLink) && (
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-gray-200">
+              {hasLiveLink && (
+                <a
+                  href={project.liveLink!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105"
+                >
+                  <FaExternalLinkAlt size={18} />
+                  Live Demo
+                </a>
+              )}
+              {hasGithub && (
+                <a
+                  href={project.githubLink!}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex-1 inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300 hover:scale-105 ${
+                    !hasLiveLink ? "w-full" : ""
+                  }`}
+                >
+                  <FaGithub size={20} />
+                  View Code
+                </a>
+              )}
+            </div>
+          )}
+
+          {/* যদি কোন লিংক না থাকে */}
+          {!hasGithub && !hasLiveLink && (
+            <div className="pt-4 border-t border-gray-200 text-center">
+              <p className="text-gray-500 text-sm">
+                This project is currently private. Contact me for more details.
+              </p>
+            </div>
+          )}
         </div>
       </div>
 

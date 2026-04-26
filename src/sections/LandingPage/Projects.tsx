@@ -23,8 +23,8 @@ interface Project {
   fullDescription: string;
   image: string;
   technologies: string[];
-  githubLink: string;
-  liveLink: string;
+  githubLink: string | null; // Can be null
+  liveLink: string | null; // Can be null
   featured: boolean;
 }
 
@@ -44,124 +44,130 @@ const Projects = () => {
         description:
           "A full-featured e-commerce platform with cart, wishlist, payment integration, and admin dashboard.",
         fullDescription:
-          "A comprehensive e-commerce solution built with modern technologies. Features include user authentication, product management, shopping cart, wishlist, secure payment integration with Stripe, order tracking, and an admin dashboard for managing products, orders, and users. The platform is fully responsive and optimized for performance, with real-time inventory management and email notifications.",
-        image:
-          "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
+          "A comprehensive e-commerce solution built using the MERN stack (MongoDB, Express.js, React, Node.js) along with Tailwind CSS for modern UI design. The platform includes secure user authentication, product and inventory management, shopping cart, wishlist functionality, and Stripe payment integration. It also features an admin dashboard for managing users, products, and orders. The application is fully responsive, optimized for performance, and supports real-time updates and email notifications.",
+        image: "/gadget.png",
         technologies: [
-          "Next.js",
-          "TypeScript",
-          "Tailwind CSS",
+          "React.js",
+          "Typescript",
+          "Node.js",
+          "Express.js",
           "MongoDB",
-          "Stripe",
-          "Redux Toolkit",
+          "Tailwind CSS",
         ],
-        githubLink: "https://github.com/yourusername/project1",
-        liveLink: "https://project1.com",
+        githubLink: "https://github.com/67sazzadhossen/gadgetbd_client",
+        liveLink: "https://gadgetbd-client.vercel.app/",
         featured: true,
       },
       {
         id: 2,
-        title: "Task Management App",
+        title: "Spot Booking System",
         description:
-          "Collaborative task management tool with real-time updates, drag-and-drop, and team features.",
+          "A modern spot booking platform built with Next.js, allowing users to explore, reserve, and pay for spots with real-time availability.",
         fullDescription:
-          "A powerful task management application designed for teams. Includes real-time updates via WebSockets, drag-and-drop task organization, team workspaces, task assignments, deadlines, comments, file attachments, and progress tracking. The app features dark mode, keyboard shortcuts, and integration with Google Calendar.",
-        image:
-          "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop",
+          "A full-stack spot booking system built with Next.js for optimized performance and seamless user experience. The platform allows users to browse available spots with detailed information, images, pricing, and real-time availability. Users can book spots instantly and complete secure transactions using Stripe payment integration.\n\nThe system includes authentication and role-based access control, enabling admins to add, update, and manage spots, monitor bookings, and control user activities through a dedicated dashboard. Key features include advanced search and filtering, booking history, real-time updates, and a fully responsive UI built with Tailwind CSS. The application is optimized with server-side rendering (SSR) and efficient data fetching, ensuring fast load times and scalability.",
+        image: "toorizta.png",
         technologies: [
-          "React",
+          "Next.js",
+          "Typescript",
+          "React.js",
           "Node.js",
-          "Socket.io",
-          "PostgreSQL",
+          "Express.js",
+          "MongoDB",
+          "Stripe",
           "Tailwind CSS",
-          "DND Kit",
         ],
-        githubLink: "https://github.com/yourusername/project2",
-        liveLink: "https://project2.com",
+        githubLink: null,
+        liveLink: "https://toorizta-client.vercel.app/",
         featured: true,
       },
       {
         id: 3,
-        title: "AI Content Generator",
-        description: "AI-powered content generation platform using OpenAI API.",
+        title: "Salon Management System",
+        description:
+          "A smart salon management platform with service booking, billing workflow, and digital customer profiles using QR/NFC.",
         fullDescription:
-          "An innovative content generation platform powered by OpenAI's GPT-4. Users can generate blog posts, social media content, product descriptions, and more. Features include content templates, SEO optimization suggestions, multiple language support, content history, and export options (PDF, DOCX, HTML). The platform also includes a built-in text editor with formatting options.",
-        image:
-          "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+          "A full-featured salon management system built with modern technologies to streamline daily salon operations. The platform allows admins to add and manage services, pricing, and staff efficiently. Managers and cutters can generate bills for completed services, which are then reviewed and approved by admins or accountants, ensuring a structured financial workflow.\n\nThe system includes secure payment integration, allowing seamless transactions. Customers are provided with digital profiles that can be accessed instantly via QR code or NFC card scanning. Through their profiles, customers can view service history, expenses, and visit records.\n\nOn the admin side, the platform offers powerful financial tracking and reporting tools, enabling accurate expense calculation, revenue monitoring, and overall business insights. Key features include role-based access control, real-time data updates, responsive UI, and a scalable architecture designed for modern salon businesses.",
+        image: "luxur.png",
         technologies: [
           "Next.js",
-          "OpenAI API",
-          "Tailwind CSS",
+          "Typescript",
+          "Node.js",
+          "Express.js",
+          "Redux Toolkit",
+          "Redux Persist",
+          "MongoDB",
+          "Mongoose",
           "Prisma",
-          "PostgreSQL",
-          "TipTap Editor",
+          "Tailwind CSS",
         ],
-        githubLink: "https://github.com/yourusername/project3",
-        liveLink: "https://project3.com",
+        githubLink: null,
+        liveLink: "https://www.luxurmen.com/",
         featured: true,
       },
       {
         id: 4,
-        title: "Weather Dashboard",
+        title: "School Management & Smart Attendance System",
         description:
-          "Real-time weather dashboard with interactive maps and forecasts.",
+          "An advanced school management system with real-time attendance tracking using biometric devices and smart state management.",
         fullDescription:
-          "A comprehensive weather application providing real-time weather data, 7-day forecasts, interactive maps, and severe weather alerts. Features include location search, saved locations, temperature unit conversion, animated weather icons, air quality index, UV index, and precipitation radar. The app uses multiple weather APIs for accurate data and includes beautiful data visualizations.",
-        image:
-          "https://images.unsplash.com/photo-1592210454359-9043ad06720b?w=600&h=400&fit=crop",
+          "A full-stack school management system built to automate attendance tracking, academic monitoring, and financial operations. The system integrates biometric devices (fingerprint, face recognition, and RFID/NFC cards), which instantly send data to the server whenever a student or teacher checks in or out.\n\nReal-time SMS notifications are automatically sent to guardians upon entry and exit, ensuring safety and transparency. Each student has a dedicated profile where guardians can monitor attendance history, academic performance, and payment records.\n\nTeachers can add daily subject-wise performance, which is instantly reflected in the student’s profile. The platform also includes a complete account management system with bKash payment integration for handling fees and transactions.\n\nOn the frontend, Redux Toolkit and Redux Persist are used for efficient global state management and data persistence, ensuring a smooth and optimized user experience. The backend is powered by Node.js and Express.js with MongoDB for scalable data storage.\n\nAdmins have full control via a centralized dashboard to manage students, teachers, attendance, payments, and reports. The system is designed with role-based access control, real-time updates, and a responsive UI for seamless use across devices.",
+        image: "/gscam.png",
         technologies: [
-          "React",
-          "OpenWeather API",
-          "Chart.js",
-          "Leaflet Maps",
-          "Axios",
-          "CSS3",
+          "React.js",
+          "Redux Toolkit",
+          "Redux Persist",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "bKash Payment Gateway",
+          "Biometric Integration",
+          "Tailwind CSS",
         ],
-        githubLink: "https://github.com/yourusername/weather-app",
-        liveLink: "https://weather-app.com",
-        featured: false,
+        githubLink: null,
+        liveLink: "https://www.gscam.edu.bd/",
+        featured: true,
       },
       {
         id: 5,
-        title: "Social Media API",
+        title: "Freelance Marketplace Platform",
         description:
-          "RESTful API for social media platform with authentication and real-time features.",
+          "A full-stack freelance marketplace where clients can post jobs with payment and freelancers can complete tasks and withdraw earnings.",
         fullDescription:
-          "A robust RESTful API backend for a social media platform. Features include JWT authentication, user profiles, posts, comments, likes, followers system, real-time notifications using WebSockets, file uploads, and rate limiting. The API is fully documented with Swagger/OpenAPI, includes comprehensive error handling, input validation, and follows REST best practices.",
-        image:
-          "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop",
+          "A full-stack freelance marketplace platform inspired by Fiverr, built to connect clients and freelancers in a seamless ecosystem. Clients can create and publish job posts by making a secure payment through Stripe, ensuring commitment and reducing spam.\n\nFreelancers can browse available jobs, submit proposals, and complete assigned tasks. Once a job is successfully delivered and reviewed by the client, the system processes earnings, allowing freelancers to withdraw their balance securely.\n\nThe platform includes JWT-based authentication for secure user access, role-based workflows (client & freelancer), and protected routes. Axios is used for efficient API communication, while the backend is powered by Node.js and Express.js with MongoDB for scalable data storage.\n\nKey features include job posting with payment validation, order lifecycle management (pending → in progress → delivered → reviewed), user reviews and ratings, secure withdrawal system, and responsive UI for smooth user experience.",
+        image: "/gigzoom.png",
         technologies: [
+          "React.js",
           "Node.js",
-          "Express",
+          "Express.js",
           "MongoDB",
-          "JWT",
-          "Socket.io",
-          "Multer",
-          "Swagger",
+          "JWT Authentication",
+          "Stripe Payment",
+          "Axios",
+          "Tailwind CSS",
         ],
-        githubLink: "https://github.com/yourusername/social-api",
-        liveLink: "https://api-docs.com",
+        githubLink: "https://github.com/67sazzadhossen/gigzoom",
+        liveLink: "https://gigzoom.web.app/",
         featured: false,
       },
       {
         id: 6,
-        title: "Fitness Tracker App",
+        title: "Volunteer Management Platform",
         description:
-          "Mobile fitness tracking app with workout plans and progress tracking.",
+          "A platform where organizations can post volunteer needs and users can join events with real-time slot tracking.",
         fullDescription:
-          "A cross-platform mobile fitness application built with React Native. Features include personalized workout plans, exercise library with video demonstrations, progress tracking with charts, step counter, calorie tracking, water intake reminders, and social features to share achievements. The app syncs with Apple HealthKit and Google Fit, and includes data export functionality.",
-        image:
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+          "A full-stack volunteer management platform designed to connect organizations with volunteers efficiently. Organizations can create posts specifying the number of volunteers required, event details, and scheduled dates.\n\nUsers can browse available opportunities and join as volunteers. When a user joins an event, the system automatically updates the remaining slots in real-time, ensuring accurate tracking of required volunteers.\n\nThe platform includes secure JWT-based authentication, protected routes, and seamless API communication using Axios. The backend is built with Node.js and Express.js, providing scalable and efficient data handling.\n\nKey features include dynamic volunteer slot management, event scheduling, user participation tracking, and a responsive UI for smooth user experience across devices.",
+        image: "volunteer.png",
         technologies: [
-          "React Native",
-          "Firebase",
-          "Redux Toolkit",
-          "HealthKit",
-          "Google Fit API",
-          "Victory Native",
+          "React.js",
+          "Node.js",
+          "Express.js",
+          "MongoDB",
+          "JWT Authentication",
+          "Axios",
+          "Tailwind CSS",
         ],
-        githubLink: "https://github.com/yourusername/fitness-app",
-        liveLink: "https://fitness-app.com",
+        githubLink: "https://github.com/67sazzadhossen/Volunteer-Avenue-Client",
+        liveLink: "https://volunteer-avenue.web.app/",
         featured: false,
       },
     ],
@@ -265,31 +271,40 @@ const Projects = () => {
                     </div>
                   )}
 
-                  {/* Overlay on hover */}
-                  <div
-                    className={`absolute inset-0 bg-black/70 z-20 flex items-center justify-center gap-4 transition-all duration-500 ${
-                      hoveredCard === project.id ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300 transform hover:scale-110"
-                      onClick={(e) => e.stopPropagation()}
+                  {/* Overlay on hover - hanya tampilkan jika ada link */}
+                  {(project.githubLink || project.liveLink) && (
+                    <div
+                      className={`absolute inset-0 bg-black/70 z-20 flex items-center justify-center gap-4 transition-all duration-500 ${
+                        hoveredCard === project.id ? "opacity-100" : "opacity-0"
+                      }`}
                     >
-                      <FaGithub size={24} className="text-gray-900" />
-                    </a>
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-3 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300 transform hover:scale-110"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <FaExternalLinkAlt size={22} className="text-gray-900" />
-                    </a>
-                  </div>
+                      {project.githubLink && (
+                        <a
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-3 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300 transform hover:scale-110"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <FaGithub size={24} className="text-gray-900" />
+                        </a>
+                      )}
+                      {project.liveLink && (
+                        <a
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-3 bg-white rounded-full hover:bg-gray-100 transition-colors duration-300 transform hover:scale-110"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <FaExternalLinkAlt
+                            size={22}
+                            className="text-gray-900"
+                          />
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}

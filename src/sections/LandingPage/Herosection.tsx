@@ -1,13 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaDownload,
-  FaArrowRight,
-} from "react-icons/fa";
+import { FaDownload, FaArrowRight } from "react-icons/fa";
+import { contact } from "@/const/index.const";
 
 const Herosection = () => {
   return (
@@ -49,7 +44,7 @@ const Herosection = () => {
                 />
               </Link>
               <Link
-                href="/resume.pdf"
+                href="Resume_of_Md_Sazzad_Hossen.pdf"
                 className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 border-2 border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300 text-base sm:text-lg md:text-xl"
               >
                 Download Resume
@@ -59,23 +54,7 @@ const Herosection = () => {
 
             {/* Social Links */}
             <div className="flex gap-4 sm:gap-5 md:gap-6 pt-4 sm:pt-6 md:pt-8">
-              {[
-                {
-                  icon: FaGithub,
-                  href: "https://github.com/yourusername",
-                  label: "GitHub",
-                },
-                {
-                  icon: FaLinkedin,
-                  href: "https://linkedin.com/in/yourusername",
-                  label: "LinkedIn",
-                },
-                {
-                  icon: FaEnvelope,
-                  href: "mailto:your.email@example.com",
-                  label: "Email",
-                },
-              ].map((social) => (
+              {contact.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}

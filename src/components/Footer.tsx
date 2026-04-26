@@ -1,15 +1,8 @@
 "use client";
 import React, { useLayoutEffect, useState } from "react";
 import Link from "next/link";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaEnvelope,
-  FaHeart,
-  FaArrowUp,
-  FaCode,
-} from "react-icons/fa";
+import { FaArrowUp, FaCode } from "react-icons/fa";
+import { contact } from "@/const/index.const";
 
 const Footer = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -21,33 +14,6 @@ const Footer = () => {
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
-  ];
-
-  const socialLinks = [
-    {
-      icon: FaGithub,
-      href: "https://github.com/yourusername",
-      label: "GitHub",
-      color: "hover:text-gray-400",
-    },
-    {
-      icon: FaLinkedin,
-      href: "https://linkedin.com/in/yourusername",
-      label: "LinkedIn",
-      color: "hover:text-blue-400",
-    },
-    {
-      icon: FaTwitter,
-      href: "https://twitter.com/yourusername",
-      label: "Twitter",
-      color: "hover:text-sky-400",
-    },
-    {
-      icon: FaEnvelope,
-      href: "mailto:sazzad@example.com",
-      label: "Email",
-      color: "hover:text-red-400",
-    },
   ];
 
   const services = [
@@ -89,7 +55,7 @@ const Footer = () => {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="absolute -top-5 left-1/2 transform -translate-x-1/2 p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-110 shadow-lg"
+        className="absolute -top-5 left-1/2 transform -translate-x-1/2 p-3 bg-linear-to-r from-blue-600 to-purple-600 rounded-full text-white hover:from-blue-700 hover:to-purple-700 transition-all duration-300 hover:scale-110 shadow-lg"
         aria-label="Scroll to top"
       >
         <FaArrowUp size={20} />
@@ -101,7 +67,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <Link href="#home" className="inline-block">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
                 Sazzad Hossen
               </h3>
             </Link>
@@ -110,7 +76,7 @@ const Footer = () => {
               modern web technologies.
             </p>
             <div className="flex gap-3 pt-2">
-              {socialLinks.map((social, index) => (
+              {contact.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
@@ -184,12 +150,6 @@ const Footer = () => {
           <p className="text-gray-500 text-sm text-center sm:text-left">
             © {currentYear} Sazzad Hossen. All rights reserved.
           </p>
-
-          <div className="flex items-center gap-2 text-gray-500 text-sm">
-            <span>Made with</span>
-            <FaHeart className="text-red-500 animate-pulse" size={14} />
-            <span>by Sazzad Hossen</span>
-          </div>
 
           <div className="flex gap-4">
             <Link

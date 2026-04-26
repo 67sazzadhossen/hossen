@@ -10,19 +10,40 @@ import {
 
 const AboutSection = () => {
   const stats = [
-    { icon: FaUserGraduate, value: "5+", label: "Years Experience" },
-    { icon: FaLaptopCode, value: "50+", label: "Projects Completed" },
-    { icon: FaRocket, value: "30+", label: "Happy Clients" },
-    { icon: FaAward, value: "15+", label: "Achievements" },
+    { icon: FaUserGraduate, value: "2+", label: "Years Experience" },
+    { icon: FaLaptopCode, value: "25+", label: "Projects Completed" },
+    { icon: FaRocket, value: "10+", label: "Happy Clients" },
+    { icon: FaAward, value: "10+", label: "Achievements" },
   ];
 
   const skills = [
-    "React.js / Next.js",
-    "Node.js / Express",
+    // Frontend
+    "React.js",
+    "Next.js",
     "TypeScript",
     "Tailwind CSS",
-    "MongoDB / PostgreSQL",
-    "GraphQL",
+    "Framer Motion",
+    "Redux Toolkit",
+    "Redux Persist",
+
+    // Backend
+    "Node.js",
+    "Express.js",
+    "REST API Development",
+    "JWT Authentication",
+
+    // Database & ORM
+    "MongoDB",
+
+    // Tools & Libraries
+    "Axios",
+    "Socket.io",
+    "Stripe Integration",
+
+    // Other
+    "Responsive Design",
+    "Role-Based Access Control",
+    "Real-time Systems",
   ];
 
   return (
@@ -31,7 +52,7 @@ const AboutSection = () => {
       className="min-h-screen flex items-center bg-white py-20 lg:py-28"
     >
       <div className="w-full px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-start">
           {/* Left Side - Image */}
           <div className="relative order-2 lg:order-1">
             <div className="relative w-full h-87.5 sm:h-100 md:h-112.5 lg:h-125 rounded-2xl sm:rounded-3xl overflow-hidden border border-gray-200 shadow-2xl">

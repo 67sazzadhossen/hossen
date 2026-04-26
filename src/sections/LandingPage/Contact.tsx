@@ -1,12 +1,10 @@
 "use client";
-import React, { useState, useRef, useLayoutEffect } from "react";
+import { contact } from "@/const/index.const";
+import React, { useState, useLayoutEffect } from "react";
 import {
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
   FaPaperPlane,
   FaCheckCircle,
   FaSpinner,
@@ -28,44 +26,23 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       title: "Email Me",
-      value: "sazzad@example.com",
-      link: "mailto:sazzad@example.com",
+      value: "sazzadhossen010@gmail.com",
+      link: "mailto:sazzadhossen010@gmail.com",
       color: "hover:text-blue-400",
     },
     {
       icon: FaPhone,
       title: "Call Me",
-      value: "+880 1234 567890",
-      link: "tel:+8801234567890",
+      value: "+8801772731958",
+      link: "tel:+8801772731958",
       color: "hover:text-green-400",
     },
     {
       icon: FaMapMarkerAlt,
       title: "Location",
-      value: "Dhaka, Bangladesh",
+      value: "Mymensingh, Bangladesh",
       link: null,
       color: "hover:text-red-400",
-    },
-  ];
-
-  const socialLinks = [
-    {
-      icon: FaGithub,
-      href: "https://github.com/yourusername",
-      label: "GitHub",
-      color: "hover:text-gray-400",
-    },
-    {
-      icon: FaLinkedin,
-      href: "https://linkedin.com/in/yourusername",
-      label: "LinkedIn",
-      color: "hover:text-blue-400",
-    },
-    {
-      icon: FaTwitter,
-      href: "https://twitter.com/yourusername",
-      label: "Twitter",
-      color: "hover:text-sky-400",
     },
   ];
 
@@ -128,6 +105,7 @@ const Contact = () => {
   };
 
   useLayoutEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMounted(true);
   }, []);
 
@@ -156,11 +134,11 @@ const Contact = () => {
             Get In Touch
           </span>
           <h2 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+          <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-purple-500 mx-auto"></div>
           <p className="text-gray-400 text-lg mt-6 max-w-3xl mx-auto">
-            Have a project in mind? I'd love to hear about it. Feel free to
+            Have a project in mind? I&apos;d love to hear about it. Feel free to
             reach out!
           </p>
         </div>
@@ -173,9 +151,9 @@ const Contact = () => {
                 Contact Information
               </h3>
               <p className="text-gray-400 mb-8">
-                I'm always excited to work on new projects and meet new people.
-                Whether you have a question or just want to say hi, I'll try my
-                best to get back to you!
+                I&apos;m always excited to work on new projects and meet new
+                people. Whether you have a question or just want to say hi,
+                I&apos;ll try my best to get back to you!
               </p>
             </div>
 
@@ -217,7 +195,7 @@ const Contact = () => {
             <div className="pt-6">
               <h4 className="text-white font-medium mb-4">Connect with me</h4>
               <div className="flex gap-4">
-                {socialLinks.map((social, index) => (
+                {contact.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
@@ -252,7 +230,7 @@ const Contact = () => {
                   Message Sent!
                 </h4>
                 <p className="text-gray-400">
-                  Thank you for reaching out. I'll get back to you soon!
+                  Thank you for reaching out. I&apos;ll get back to you soon!
                 </p>
               </div>
             ) : (
@@ -364,7 +342,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-3 bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
