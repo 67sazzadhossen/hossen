@@ -54,10 +54,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-9999 transition-all duration-300  ${
         isScrolled
           ? "bg-black/90 backdrop-blur-md border-b border-white/10"
-          : "bg-transparent"
+          : "bg-white"
       }`}
     >
       <div className="w-full px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
@@ -94,10 +94,10 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden z-9999">
             <button
               onClick={toggleMenu}
-              className="text-white hover:text-gray-300 focus:outline-none transition-colors duration-300"
+              className={`text-black hover:text-gray-300 focus:outline-none transition-colors duration-300 ${isScrolled && "text-white"}`}
               aria-label="Toggle menu"
             >
               {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -107,7 +107,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden transition-all duration-300 ease-in-out ${
+          className={`md:hidden transition-all duration-300 ease-in-out  ${
             isOpen
               ? "max-h-96 opacity-100"
               : "max-h-0 opacity-0 overflow-hidden"
@@ -121,9 +121,9 @@ const Navbar = () => {
                 onClick={handleLinkClick}
                 className={`transition-colors duration-300 font-medium px-2 py-2 uppercase ${
                   activeSection === link.section
-                    ? "text-white bg-white/10 rounded-lg"
-                    : "text-gray-400 hover:text-white hover:bg-white/5 rounded-lg"
-                }`}
+                    ? "text-black bg-white/10 rounded-lg"
+                    : "text-gray-900 hover:text-white hover:bg-white/5 rounded-lg"
+                } ${isScrolled && "text-white"}`}
               >
                 {link.name}
               </Link>
