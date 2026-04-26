@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,10 +66,11 @@ const Navbar = () => {
           <div className="shrink-0">
             <Link
               href="/#home"
-              className={`text-xl sm:text-2xl font-extrabold uppercase text-black hover:text-gray-300 transition-colors duration-300 ${
+              className={`text-xl flex items-center gap-2 sm:text-2xl font-extrabold uppercase text-black hover:text-gray-300 transition-colors duration-300 ${
                 isScrolled ? "text-white" : "text-black"
               }`}
             >
+              <Image src={"/logo.png"} alt="logo" width={30} height={20} />{" "}
               Sazzad Hossen
             </Link>
           </div>
