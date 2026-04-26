@@ -1,3 +1,9 @@
+import LandingPage from "@/pages/LandingPage";
+
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <LandingPage />
+    </div>
+  );
 }

@@ -6,6 +6,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +26,9 @@ const Navbar = () => {
           }
         }
       }
+
+      // Add background on scroll
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -48,28 +52,39 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-md z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-black/90 backdrop-blur-md border-b border-white/10"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="w-full px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24">
+        <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
           <div className="shrink-0">
-            <Link href="/#home" className="text-2xl font-extrabold uppercase">
+            <Link
+              href="/#home"
+              className={`text-xl sm:text-2xl font-extrabold uppercase text-black hover:text-gray-300 transition-colors duration-300 ${
+                isScrolled ? "text-white" : "text-black"
+              }`}
+            >
               Sazzad Hossen
             </Link>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-12">
+          <div className="hidden md:flex space-x-8 lg:space-x-12">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={handleLinkClick}
-                className={`uppercase transition-colors duration-300 font-medium ${
+                className={`uppercase transition-all duration-300 font-medium text-sm lg:text-base ${
                   activeSection === link.section
-                    ? "text-blue-600"
-                    : "text-gray-700 hover:text-purple-600"
-                }`}
+                    ? "text-black border-b-2 border-black"
+                    : "text-black hover:text-white hover:border-b-2 hover:border-white/50"
+                } ${isScrolled ? "text-white border-white" : "text-black"}`}
               >
                 {link.name}
               </Link>
@@ -80,7 +95,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-gray-700 hover:text-purple-600 focus:outline-none transition-colors duration-300"
+              className="text-white hover:text-gray-300 focus:outline-none transition-colors duration-300"
               aria-label="Toggle menu"
             >
               {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -96,16 +111,16 @@ const Navbar = () => {
               : "max-h-0 opacity-0 overflow-hidden"
           }`}
         >
-          <div className="flex flex-col space-y-4 pb-6">
+          <div className="flex flex-col space-y-4 pb-6 pt-2">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={handleLinkClick}
-                className={`transition-colors duration-300 font-medium px-2 ${
+                className={`transition-colors duration-300 font-medium px-2 py-2 uppercase ${
                   activeSection === link.section
-                    ? "text-purple-600"
-                    : "text-gray-700 hover:text-purple-600"
+                    ? "text-white bg-white/10 rounded-lg"
+                    : "text-gray-400 hover:text-white hover:bg-white/5 rounded-lg"
                 }`}
               >
                 {link.name}
