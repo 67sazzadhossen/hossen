@@ -83,7 +83,7 @@ const Navbar = () => {
                 className={`uppercase transition-all duration-300 font-medium text-sm lg:text-base ${
                   activeSection === link.section
                     ? "text-black border-b-2 border-black"
-                    : "text-black hover:text-white hover:border-b-2 hover:border-white/50"
+                    : "text-black hover:text-gray-500 "
                 } ${isScrolled ? "text-white border-white" : "text-black"}`}
               >
                 {link.name}
